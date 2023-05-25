@@ -74,7 +74,7 @@ def process_paste_name(message, file_content):
 
     bot.reply_to(message, f"*تم رفع الملف إلى Pastebin.\n\nرابط الملف: *{response.text}",parse_mode="Markdown")
 
-@server.route('/' + TOKEN, methods=['POST'])
+@server.route('/' + bot_token, methods=['POST'])
 
 def getMessage():
 
@@ -92,7 +92,7 @@ def webhook():
 
     bot.remove_webhook()
 
-    bot.set_webhook(url=link + TOKEN)
+    bot.set_webhook(url=link + bot_token)
 
     return "!", 200
 
